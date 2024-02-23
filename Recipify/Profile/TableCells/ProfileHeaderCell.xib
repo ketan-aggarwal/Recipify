@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="ProfileHeaderCell" customModule="Recipify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="445" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wjc-0P-JZ6">
+                        <rect key="frame" x="11" y="4" width="90" height="88.666666666666671"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.60740202669999999" green="0.79460513590000004" blue="0.25317350030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="wQo-Jg-0Gt"/>
+                            <constraint firstAttribute="width" constant="90" id="yaV-S6-Xam"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="40"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uia-JN-uFi">
+                        <rect key="frame" x="288.66666666666669" y="32" width="90" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="B0h-nt-q8V"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="YUc-cB-brh"/>
+                            <constraint firstAttribute="width" constant="90" id="blj-Ix-JbM"/>
+                        </constraints>
+                        <color key="tintColor" red="0.60740202669999999" green="0.79460513590000004" blue="0.25317350030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="pencil" catalog="system">
+                            <color key="titleColor" systemColor="linkColor"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="black">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            </preferredSymbolConfiguration>
+                        </state>
+                        <connections>
+                            <action selector="editBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZAH-69-8b9"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, Maggie!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXw-Ym-SYO">
+                        <rect key="frame" x="112.99999999999999" y="31.333333333333332" width="170.66666666666663" height="33.666666666666671"/>
+                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="background"/>
+                <constraints>
+                    <constraint firstItem="Wjc-0P-JZ6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4t1-Xw-Sef"/>
+                    <constraint firstItem="Uia-JN-uFi" firstAttribute="centerY" secondItem="oXw-Ym-SYO" secondAttribute="centerY" id="DJn-SP-ooK"/>
+                    <constraint firstItem="oXw-Ym-SYO" firstAttribute="centerY" secondItem="Wjc-0P-JZ6" secondAttribute="centerY" id="HQv-yM-4Zx"/>
+                    <constraint firstItem="Wjc-0P-JZ6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="TiC-jN-fsN"/>
+                    <constraint firstItem="Uia-JN-uFi" firstAttribute="leading" secondItem="oXw-Ym-SYO" secondAttribute="trailing" constant="5" id="ZjF-AN-v9s"/>
+                    <constraint firstItem="oXw-Ym-SYO" firstAttribute="leading" secondItem="Wjc-0P-JZ6" secondAttribute="trailing" constant="12" id="sJQ-JO-wwi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="editBtn" destination="Uia-JN-uFi" id="3q0-lG-t4t"/>
+                <outlet property="userImg" destination="Wjc-0P-JZ6" id="vg1-u2-A6a"/>
+                <outlet property="userLabel" destination="oXw-Ym-SYO" id="vUh-ma-O5p"/>
+            </connections>
+            <point key="canvasLocation" x="234.35114503816794" y="56.338028169014088"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <namedColor name="background">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

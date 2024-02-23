@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-Recipify/Pods-Recipify-frameworks.sh
+${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework
+${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework
+${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/ShimmerSwift/ShimmerSwift.framework
+${BUILT_PRODUCTS_DIR}/Swift_PageMenu/Swift_PageMenu.framework
+${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTags.framework
+${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework

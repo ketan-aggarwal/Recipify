@@ -1,0 +1,6 @@
+framework module Pods_Recipify {
+  umbrella header "Pods-Recipify-umbrella.h"
+
+  export *
+  module * { export * }
+}
