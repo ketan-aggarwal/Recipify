@@ -12,9 +12,12 @@ protocol ItemTypeDashBoardProtocol {
     var itemType: ItemType {get}
 }
 
+struct LoadingItem: ItemTypeDashBoardProtocol {
+    var itemType: ItemType = .loading
+}
+
 struct CollectionRecipeViewItem : ItemTypeDashBoardProtocol{
     var itemType: ItemType = .recipe
-    
     var id: Int?
     var title: String?
     var image: String?

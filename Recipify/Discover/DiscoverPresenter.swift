@@ -7,22 +7,22 @@ class DashBoardPresenter {
     
     func presentFetchedData(recipeCategories: [[RecipeElement]]) {
         print("Received recipe categories:")
-
-            for (index, category) in recipeCategories.enumerated() {
-                print("Category \(index + 1):")
-                
-                for recipeElement in category {
-                    print("  - Recipe Element: \(recipeElement)")
-                }
-            }
-
-        if let viewModel = createViewModel(from: recipeCategories) {
-            viewController?.displayDashBoardData(viewModel: viewModel)
-                viewController?.setLoadingState(false)
-            }else{
-                viewController?.setLoadingState(true)
+        
+        for (index, category) in recipeCategories.enumerated() {
+            print("Category \(index + 1):")
+            
+            for recipeElement in category {
+                print("  - Recipe Element: \(recipeElement)")
             }
         }
+        
+        if let viewModel = createViewModel(from: recipeCategories) {
+            viewController?.displayDashBoardData(viewModel: viewModel)
+            
+        }
+    }
+    
+    
     
     
     private func createViewModel(from recipeCategories: [[RecipeElement]]) -> DashBoardScreenViewModel? {
@@ -30,19 +30,18 @@ class DashBoardPresenter {
             return nil
         }
         print("Elements in recipeCategories: \(recipeCategories.count)")
-        
+
         var dashboardTableItems: [DashBoardTableItem] = []
-        
-        
+
+
         var cuisines: [String] = []
         cuisines = ["Indian", "Chinese", "American", "Indian", "American"]
-        
+
         let cuisineItems = cuisines.map { CollectionCuisineViewItem(title: $0) }
-        
-        let cuisineTableItem = DashBoardTableItem(recipeItems: [], cuisineItems: cuisineItems)
+        let cuisineTableItem = DashBoardTableItem(dashboardItems: cuisineItems, recipeItems: [], cuisineItems: cuisineItems)
            dashboardTableItems.append(cuisineTableItem)
-       
-        
+
+
         for index in 1..<recipeCategories.count + 1 {
             let categoryRecipes = recipeCategories[index-1]
 
@@ -50,7 +49,8 @@ class DashBoardPresenter {
 
             for recipe in categoryRecipes {
                 let recipeItem = CollectionRecipeViewItem(
-                    id: recipe.id, 
+
+                    id: recipe.id,
                     title: recipe.title,
                     image: recipe.image,
                     readyInMinutes: recipe.readyInMinutes,
@@ -59,20 +59,20 @@ class DashBoardPresenter {
                 recipeItems.append(recipeItem)
             }
 
-            let tableItem = DashBoardTableItem(recipeItems: recipeItems, cuisineItems: [])
+            let tableItem = DashBoardTableItem(dashboardItems: recipeItems, recipeItems: recipeItems, cuisineItems: [])
             dashboardTableItems.append(tableItem)
         }
 
-        
+
 
         print("Total items in dashboard:\(dashboardTableItems.count)")
-        
+
         let viewModel = DashBoardScreenViewModel(dashboardTableItems: dashboardTableItems)
-       
+
         return viewModel
     }
-    
-   
+
+
     
     func presentFilteredData(isHealthy: Bool, isPopular: Bool, recipeCategories: [[RecipeElement]])  {
        
@@ -86,7 +86,7 @@ class DashBoardPresenter {
         let cuisines = ["Indian", "Chinese", "American", "Indian", "American"]
         let cuisineItems = cuisines.map { CollectionCuisineViewItem(title: $0) }
         
-        let cuisineTableItem = DashBoardTableItem(recipeItems: [], cuisineItems: cuisineItems)
+        let cuisineTableItem = DashBoardTableItem(dashboardItems: cuisineItems, recipeItems: [], cuisineItems: cuisineItems)
         filteredDashboardItems.append(cuisineTableItem)
         
         print("filtered\(recipeCategories[0])")
@@ -110,7 +110,7 @@ class DashBoardPresenter {
             
             // Add table item if there are filtered recipe items
             if !filteredRecipeItems.isEmpty {
-                let tableItem = DashBoardTableItem(recipeItems: filteredRecipeItems, cuisineItems: [])
+                let tableItem = DashBoardTableItem(dashboardItems: [], recipeItems: filteredRecipeItems, cuisineItems: [])
                 filteredDashboardItems.append(tableItem)
             }
         }
