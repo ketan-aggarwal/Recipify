@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Lottie
+
 
 protocol FetchRecipeDisplayLogic{
     func displayRecipes(viewModel: FetchRecipeViewModel)
@@ -14,9 +16,10 @@ protocol FetchRecipeDisplayLogic{
 class FetchRecipeViewController: UIViewController, FetchRecipeDisplayLogic , UITableViewDelegate, UITableViewDataSource{
    
     @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var searchField: UITextField!
-    
+   // @IBOutlet weak var searchField: UITextField!
    
+    
+    private var animationView: LottieAnimationView!
     var interactor : FetchRecipeInteractor?
     var viewModel: FetchRecipeViewModel?
     var discoverRouter: DiscoverRouter?
@@ -25,7 +28,7 @@ class FetchRecipeViewController: UIViewController, FetchRecipeDisplayLogic , UIT
     var searchText: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchField.text = searchText
+        //searchField.text = searchText
         headerLabel.text = "\(searchText) Recipes"
         setupCylce()
         setupTable()
@@ -56,8 +59,28 @@ class FetchRecipeViewController: UIViewController, FetchRecipeDisplayLogic , UIT
         self.viewModel = viewModel
         DispatchQueue.main.async {
             self.fetchRecipeTable.reloadData()
+            self.togglePlaceholderView()
         }
     }
+    
+
+    func togglePlaceholderView() {
+        if viewModel?.searchList.isEmpty ?? true {
+            setupAnimationView(on: self.view)
+            
+        }
+    }
+
+    func setupAnimationView(on view: UIView) {
+        animationView = .init(name: "Animation - 1708948227887")
+        animationView.frame = view.bounds
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.0
+        view.addSubview(animationView)
+        animationView.play()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

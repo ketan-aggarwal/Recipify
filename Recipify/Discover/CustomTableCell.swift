@@ -99,6 +99,10 @@ class CustomTableCell: UITableViewCell, UICollectionViewDelegate , UICollectionV
        }
     
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4 // Adjust the value as needed to adjust the vertical spacing between rows
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero

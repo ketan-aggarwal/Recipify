@@ -6,7 +6,7 @@ protocol DiscoverRecipesWorkerLogic {
 
 class DiscoverRecipesWorker: DiscoverRecipesWorkerLogic {
     func fetchRecipes(query: String, completion: @escaping ([RecipeElement]?) -> Void) {
-        let urlString = "https://api.spoonacular.com/recipes/complexSearch?query=\(query)&number=4&apiKey=638f9e512b0d416baff747e8325f5914&instructionsRequired=true&addRecipeInformation=true"
+        let urlString = "https://api.spoonacular.com/recipes/complexSearch?query=\(query)&number=4&apiKey=fa2ddf68cccb4977a68420d8829eded1&instructionsRequired=true&addRecipeInformation=true"
         print("Recipes\(urlString)")
         guard let url = URL(string: urlString) else {
             completion(nil)
@@ -24,7 +24,7 @@ class DiscoverRecipesWorker: DiscoverRecipesWorkerLogic {
                 // Dispatch to a background queue to simulate a delay
                 DispatchQueue.global().async {
                     // Simulate a 2-second delay
-                    Thread.sleep(forTimeInterval: 3)
+                    Thread.sleep(forTimeInterval: 1)
                     
                     DispatchQueue.main.async {
                         do {

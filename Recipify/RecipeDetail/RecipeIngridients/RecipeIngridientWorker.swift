@@ -15,7 +15,7 @@ class  RecipeIngridientWorker: RecipeIngridientWorkingLogic {
     
     func getRecipeIngridients(ID: Int, completion: @escaping ([ExtendedIngredient]?) -> Void ){
         let interpString = String(ID)
-        let urlString = "https://api.spoonacular.com/recipes/\(interpString)/information?includeNutrition=false&apiKey=126f25b751f24b71bcf1206d60ce4592"
+        let urlString = "https://api.spoonacular.com/recipes/\(interpString)/information?includeNutrition=false&apiKey=fa2ddf68cccb4977a68420d8829eded1"
         print("Recipes\(urlString)")
         guard let url = URL(string: urlString) else {
             

@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+//import FirebaseCore
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
-      
+       // FirebaseApp.configure()
         return true
     }
 

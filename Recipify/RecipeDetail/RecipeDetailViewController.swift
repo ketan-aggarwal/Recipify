@@ -31,6 +31,7 @@ class RecipeDetailViewController: UIViewController, PageMenuHeightViewController
     @IBOutlet weak var servings: UILabel!
     @IBOutlet weak var childView: UIView!
     
+    @IBOutlet weak var crossBtn: UIButton!
     @IBOutlet weak var LayoutContraintPageViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -63,6 +64,10 @@ class RecipeDetailViewController: UIViewController, PageMenuHeightViewController
     
         
     }
+//    @IBAction func crossBtnTapped(_ sender: Any) {
+//        dismiss(animated: true)
+//    }
+    
     
     func isRecipeSavedInCoreData(recipeID: Int) -> Bool {
             let context = CoreDataStack.shared.managedObjectContext
