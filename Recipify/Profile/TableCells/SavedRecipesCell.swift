@@ -74,19 +74,21 @@ class SavedRecipesCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         return cell
     }
     
+  
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedId: Int64?
         let selectedTitle: String?
         let selectedImage: String?
         let selectedPrepTime: String?
         let selectedHealth: Int16?
-        
+
         selectedId = savedRecipes[indexPath.row].id
         selectedTitle = savedRecipes[indexPath.row].title
         selectedImage = savedRecipes[indexPath.row].image
         selectedPrepTime = savedRecipes[indexPath.row].prepTime
         selectedHealth = savedRecipes[indexPath.row].calories
-        
+
 //        router?.navigateToDetailPage(with: Int(selectedId ?? 0), selectedTitle: selectedTitle ?? "hello", selectedImage: selectedImage ??  "hi" , selectedPrepTime: selectedPrepTime ?? 0,selectedHealth: Int(selectedHealth ?? 0))
     }
     
