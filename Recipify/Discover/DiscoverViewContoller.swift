@@ -170,7 +170,7 @@ class DiscoverViewContoller: UIViewController, UITableViewDelegate, UITableViewD
         case 0:
             return 120
         case 1:
-            return 100
+            return 85
         default:
             return RecipeCell.cellHeight - 120
         }

@@ -11,7 +11,6 @@ import SDWebImage
 
 class SavedRecipesCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
-     
     var savedRecipes: [SavedRecipe] = []
     private let recipeCellIdentifier = "RecipeCell"
     var router: DiscoverRecipePrototcol?
@@ -64,8 +63,9 @@ class SavedRecipesCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: recipeCellIdentifier, for: indexPath) as! RecipeCell
         let recipe = savedRecipes[indexPath.item]
         cell.titleLabel.text = recipe.title
-        cell.prepTime.text = recipe.prepTime
+        cell.prepTime.text = "Prep Time\(recipe.prepTime)"
         cell.rating.text =  "\(recipe.calories)"
+        cell.savedButton.isHidden = true
         if let imageURLString = recipe.image, let imageURL = URL(string: imageURLString) {
                 cell.imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholderImage"))
             } else {
@@ -74,24 +74,19 @@ class SavedRecipesCell: UITableViewCell, UICollectionViewDelegate, UICollectionV
         return cell
     }
     
-  
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedId: Int64?
-        let selectedTitle: String?
-        let selectedImage: String?
-        let selectedPrepTime: String?
-        let selectedHealth: Int16?
+        print("tapped")
+        let selectedRecipe = savedRecipes[indexPath.row]
 
-        selectedId = savedRecipes[indexPath.row].id
-        selectedTitle = savedRecipes[indexPath.row].title
-        selectedImage = savedRecipes[indexPath.row].image
-        selectedPrepTime = savedRecipes[indexPath.row].prepTime
-        selectedHealth = savedRecipes[indexPath.row].calories
+        let itemId = Int(selectedRecipe.id)
+        let selectedTitle = selectedRecipe.title ?? ""
+        let selectedImage = selectedRecipe.image ?? ""
+        let selectedPrepTime = Int(selectedRecipe.prepTime)
+        let selectedHealth = Int(selectedRecipe.calories)
 
-//        router?.navigateToDetailPage(with: Int(selectedId ?? 0), selectedTitle: selectedTitle ?? "hello", selectedImage: selectedImage ??  "hi" , selectedPrepTime: selectedPrepTime ?? 0,selectedHealth: Int(selectedHealth ?? 0))
+        router?.navigateToDetailPage(with: itemId, selectedTitle: selectedTitle, selectedImage: selectedImage, selectedPrepTime: selectedPrepTime, selectedHealth: selectedHealth)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }

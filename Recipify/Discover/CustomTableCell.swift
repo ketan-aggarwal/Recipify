@@ -44,7 +44,7 @@ class CustomTableCell: UITableViewCell, UICollectionViewDelegate , UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dashboardItems.count
-        //return returnCount()
+        
         }
     
 
@@ -100,9 +100,8 @@ class CustomTableCell: UITableViewCell, UICollectionViewDelegate , UICollectionV
     
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 4 // Adjust the value as needed to adjust the vertical spacing between rows
+        return 4 
     }
-
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero

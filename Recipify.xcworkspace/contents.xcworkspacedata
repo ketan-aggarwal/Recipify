@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Recipify/SavedRecipe+CoreDataClass.swift">
+      location = "group:SavedRecipe+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:Recipify/SavedRecipe+CoreDataProperties.swift">
+      location = "group:SavedRecipe+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:Recipify.xcodeproj">

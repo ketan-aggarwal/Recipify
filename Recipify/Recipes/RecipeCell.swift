@@ -96,24 +96,26 @@ class RecipeCell: UICollectionViewCell {
         }
         
     }
-
+    
     func saveRecipeToCoreData(recipeItem: CollectionRecipeViewItem) {
         let context = CoreDataStack.shared.managedObjectContext
         let fetchRequest: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %d", recipeItem.id ?? -1)
-        
+
         do {
             let results = try context.fetch(fetchRequest)
             if results.isEmpty {
                 // Recipe does not exist in CoreData, so save it
                 let savedRecipe = SavedRecipe(context: context)
                 savedRecipe.title = recipeItem.title
-                savedRecipe.prepTime = recipeItem.readyInMinutes != nil ? "Prep Time: \(recipeItem.readyInMinutes!) mins" : nil
                 
+                savedRecipe.prepTime = Int64(recipeItem.readyInMinutes ?? 0)
+
                 if let id = recipeItem.id {
                     savedRecipe.id = Int64(id)
                 }
-                savedRecipe.calories = Int16(recipeItem.healthScore ?? 0)
+                //savedRecipe.calories = Int16(recipeItem.healthScore ?? 0)
+                savedRecipe.calories = Int64(recipeItem.healthScore ?? 0)
                 savedRecipe.image = recipeItem.image ?? ""
                 try context.save()
             } else {
@@ -125,6 +127,36 @@ class RecipeCell: UICollectionViewCell {
         }
     }
 
+//    func saveRecipeToCoreData(recipeItem: CollectionRecipeViewItem) {
+//        let context = CoreDataStack.shared.managedObjectContext
+//        let fetchRequest: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "id == %d", recipeItem.id ?? -1)
+//
+//        do {
+//            let results = try context.fetch(fetchRequest)
+//            if results.isEmpty {
+//                // Recipe does not exist in CoreData, so save it
+//                let savedRecipe = SavedRecipe(context: context)
+//                savedRecipe.title = recipeItem.title
+//                savedRecipe.prepTime = recipeItem.readyInMinutes != nil ? "Prep Time: \(recipeItem.readyInMinutes!) mins" : nil
+//                savedRecipe.prepTime
+//
+//                if let id = recipeItem.id {
+//                    savedRecipe.id = Int64(id)
+//                }
+//                savedRecipe.calories = Int16(recipeItem.healthScore ?? 0)
+//                savedRecipe.image = recipeItem.image ?? ""
+//                try context.save()
+//            } else {
+//                // Recipe already exists in CoreData, do nothing
+//                print("Recipe with ID \(recipeItem.id ?? -1) already exists in CoreData")
+//            }
+//        } catch {
+//            print("Error saving or fetching recipe from CoreData: \(error)")
+//        }
+//    }
+
+   
     
     func deleteRecipeFromCoreData(){
         let context = CoreDataStack.shared.managedObjectContext

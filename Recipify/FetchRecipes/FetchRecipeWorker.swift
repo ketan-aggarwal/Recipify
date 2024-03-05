@@ -18,7 +18,7 @@ class FetchRecipeWorker: FetchRecipeWorkerLogic {
     func fetchRecipe(inputString: String, completion: @escaping ([RecipeElement]?) -> Void) {
 
         let formattedInput = inputString.replacingOccurrences(of: " ", with: "+").replacingOccurrences(of: ",", with: "+")
-        let url = "https://api.spoonacular.com/recipes/complexSearch?query=\(formattedInput)&number=10&apiKey=fa2ddf68cccb4977a68420d8829eded1&instructionsRequired=true&addRecipeInformation=true"
+        let url = "https://api.spoonacular.com/recipes/complexSearch?query=\(formattedInput)&number=10&apiKey=cca46e1551784aef8290868015fd7b83&instructionsRequired=true&addRecipeInformation=true"
         print(url)
         guard let url = URL(string: url) else {
             completion(nil)

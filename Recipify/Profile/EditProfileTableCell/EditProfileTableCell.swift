@@ -13,6 +13,13 @@ class EditProfileTableCell: UITableViewCell {
     @IBOutlet weak var labelTxt: UILabel!
     @IBOutlet weak var TextField: UITextField!
     
+    var firstName: String? {
+           return TextField.text
+       }
+       
+       var lastName: String? {
+           return TextField.text
+       }
    
     
     override func awakeFromNib() {

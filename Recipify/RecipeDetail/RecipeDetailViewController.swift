@@ -23,12 +23,13 @@ class RecipeDetailViewController: UIViewController, PageMenuHeightViewController
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
+   
+    @IBOutlet weak var calories: UILabel!
     @IBOutlet weak var prepTime: UILabel!
     @IBOutlet weak var pagingView: UIView!
     @IBOutlet weak var recipeTitle: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
-    @IBOutlet weak var calories: UILabel!
-    @IBOutlet weak var servings: UILabel!
+   
     @IBOutlet weak var childView: UIView!
     
     @IBOutlet weak var crossBtn: UIButton!
@@ -51,22 +52,20 @@ class RecipeDetailViewController: UIViewController, PageMenuHeightViewController
                     updateLikeButtonAppearance()
                 }
         addChild(childController)
-        print("Interactor set in router: \(interactor)")
+        //print("Interactor set in router: \(interactor)")
         scrollView.delegate = self
         pagingView.addSubview(childController.view)
         childController.didMove(toParent: self)
         recipeTitle.text = RecipeDetailViewController.recipe
-        prepTime.text = "Prep Time: \(RecipeDetailViewController.prep ?? 0) min."
-        calories.text = "Calories: \(RecipeDetailViewController.score ?? 0) "
+        prepTime.text = "Prep Time: \(RecipeDetailViewController.prep ?? 0)"
+        calories.text = "Calories: \(RecipeDetailViewController.score ?? 0)"
         if let imageUrlString = RecipeDetailViewController.image, let imageUrl = URL(string: imageUrlString) {
             imageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder"))
         }
     
         
     }
-//    @IBAction func crossBtnTapped(_ sender: Any) {
-//        dismiss(animated: true)
-//    }
+
     
     
     func isRecipeSavedInCoreData(recipeID: Int) -> Bool {
@@ -117,9 +116,11 @@ class RecipeDetailViewController: UIViewController, PageMenuHeightViewController
         let context = CoreDataStack.shared.managedObjectContext
         let savedRecipe = SavedRecipe(context: context)
         savedRecipe.title = RecipeDetailViewController.recipe
-        savedRecipe.prepTime = RecipeDetailViewController.prep != nil ? "Prep Time: \(RecipeDetailViewController.prep!) min." : nil
+
+        savedRecipe.prepTime = Int64(RecipeDetailViewController.prep ?? 0)
         savedRecipe.id = Int64(recipeID)
-        savedRecipe.calories = Int16(RecipeDetailViewController.score ?? 0)
+
+        savedRecipe.calories = Int64(RecipeDetailViewController.score ?? 0)
         savedRecipe.image = RecipeDetailViewController.image ?? ""
         
         do {

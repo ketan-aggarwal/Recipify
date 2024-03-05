@@ -10,6 +10,7 @@ import Foundation
 struct RecipeIngridients {
     var amount: Double?
     var name: String?
+    var unit: String?
 }
 
 

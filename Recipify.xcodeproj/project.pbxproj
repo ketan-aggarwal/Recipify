@@ -13,6 +13,8 @@
 		6D07E2A62B85D6C100FB00E9 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07E2A52B85D6C100FB00E9 /* EditProfileViewModel.swift */; };
 		6D07E2A92B85D8B400FB00E9 /* EditProfileBtnTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07E2A72B85D8B400FB00E9 /* EditProfileBtnTableCell.swift */; };
 		6D07E2AA2B85D8B400FB00E9 /* EditProfileBtnTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D07E2A82B85D8B400FB00E9 /* EditProfileBtnTableCell.xib */; };
+		6D08104D2B95C0ED008125A9 /* recipesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D08104B2B95C0ED008125A9 /* recipesModel.xcdatamodeld */; };
+		6D08104F2B95EC58008125A9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D08104E2B95EC58008125A9 /* NetworkManager.swift */; };
 		6D1D6C902B7B36C7009DEDBC /* SavedRecipesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D6C8E2B7B36C7009DEDBC /* SavedRecipesCell.swift */; };
 		6D1D6C912B7B36C7009DEDBC /* SavedRecipesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D6C8F2B7B36C7009DEDBC /* SavedRecipesCell.xib */; };
 		6D243EAC2B72084600F64C28 /* RecipeIngridientPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D243EAB2B72084600F64C28 /* RecipeIngridientPresenter.swift */; };
@@ -51,7 +53,6 @@
 		6D6016B82B7635330028F32F /* ShimmeringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6016B62B7635330028F32F /* ShimmeringTableViewCell.swift */; };
 		6D6016BB2B7636400028F32F /* ShimmeringTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6016BA2B7636400028F32F /* ShimmeringTableViewCell.xib */; };
 		6D6016BF2B79E50E0028F32F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6016BE2B79E50E0028F32F /* ProfileViewController.swift */; };
-		6D6016C22B79E96B0028F32F /* recipify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D6016C02B79E96B0028F32F /* recipify.xcdatamodeld */; };
 		6D6016C52B79FF060028F32F /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6016C32B79FF060028F32F /* ProfileHeaderCell.swift */; };
 		6D6016C62B79FF060028F32F /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6016C42B79FF060028F32F /* ProfileHeaderCell.xib */; };
 		6D6016CB2B7A00650028F32F /* UserPreferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6016C92B7A00650028F32F /* UserPreferenceCell.swift */; };
@@ -115,6 +116,8 @@
 		6D07E2A52B85D6C100FB00E9 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		6D07E2A72B85D8B400FB00E9 /* EditProfileBtnTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileBtnTableCell.swift; sourceTree = "<group>"; };
 		6D07E2A82B85D8B400FB00E9 /* EditProfileBtnTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileBtnTableCell.xib; sourceTree = "<group>"; };
+		6D08104C2B95C0ED008125A9 /* recipesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = recipesModel.xcdatamodel; sourceTree = "<group>"; };
+		6D08104E2B95EC58008125A9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6D1D6C8E2B7B36C7009DEDBC /* SavedRecipesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipesCell.swift; sourceTree = "<group>"; };
 		6D1D6C8F2B7B36C7009DEDBC /* SavedRecipesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedRecipesCell.xib; sourceTree = "<group>"; };
 		6D243EAB2B72084600F64C28 /* RecipeIngridientPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngridientPresenter.swift; sourceTree = "<group>"; };
@@ -151,7 +154,6 @@
 		6D6016B62B7635330028F32F /* ShimmeringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringTableViewCell.swift; sourceTree = "<group>"; };
 		6D6016BA2B7636400028F32F /* ShimmeringTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShimmeringTableViewCell.xib; sourceTree = "<group>"; };
 		6D6016BE2B79E50E0028F32F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		6D6016C12B79E96B0028F32F /* recipify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = recipify.xcdatamodel; sourceTree = "<group>"; };
 		6D6016C32B79FF060028F32F /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		6D6016C42B79FF060028F32F /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
 		6D6016C92B7A00650028F32F /* UserPreferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferenceCell.swift; sourceTree = "<group>"; };
@@ -356,8 +358,9 @@
 			children = (
 				6D7344232B6247A700470882 /* AppDelegate.swift */,
 				6D7344252B6247A700470882 /* SceneDelegate.swift */,
+				6D08104E2B95EC58008125A9 /* NetworkManager.swift */,
 				6D7344292B6247A700470882 /* Main.storyboard */,
-				6D6016C02B79E96B0028F32F /* recipify.xcdatamodeld */,
+				6D08104B2B95C0ED008125A9 /* recipesModel.xcdatamodeld */,
 				6D5ECB1D2B7B4A290038B032 /* CoreDataStack.swift */,
 				6D243EC12B72580700F64C28 /* PageMenuViewController.swift */,
 				6D6016BC2B79E3140028F32F /* Profile */,
@@ -665,6 +668,7 @@
 				6D6016CB2B7A00650028F32F /* UserPreferenceCell.swift in Sources */,
 				6D5ECB1E2B7B4A290038B032 /* CoreDataStack.swift in Sources */,
 				6DBCED3E2B70DE860069D50F /* RecipeInstructionViewController.swift in Sources */,
+				6D08104F2B95EC58008125A9 /* NetworkManager.swift in Sources */,
 				6D1D6C902B7B36C7009DEDBC /* SavedRecipesCell.swift in Sources */,
 				6DA2F8832B67A9BC000D2C06 /* CustomTableCell.swift in Sources */,
 				6D6016A72B73A9D60028F32F /* RecipeDetailRouter.swift in Sources */,
@@ -685,6 +689,7 @@
 				6D5ECB242B7C9B590038B032 /* EditProfileViewController.swift in Sources */,
 				6D6016BF2B79E50E0028F32F /* ProfileViewController.swift in Sources */,
 				6DA2F8812B67A3CC000D2C06 /* CuisineCell.swift in Sources */,
+				6D08104D2B95C0ED008125A9 /* recipesModel.xcdatamodeld in Sources */,
 				6DBCED4D2B70F5F80069D50F /* RecipeIngridientWorker.swift in Sources */,
 				6DA2F8972B6A6525000D2C06 /* DiscoverPresenter.swift in Sources */,
 				6D243ECB2B736DE300F64C28 /* SimilarRecipesViewController.swift in Sources */,
@@ -712,7 +717,6 @@
 				6D6016A92B74D88C0028F32F /* FetchRecipeWorker.swift in Sources */,
 				6DBCED452B70E1570069D50F /* IngredientsTableCell.swift in Sources */,
 				6D243ECF2B7382E500F64C28 /* CustomTableViewCell.swift in Sources */,
-				6D6016C22B79E96B0028F32F /* recipify.xcdatamodeld in Sources */,
 				6D243EB32B721D8100F64C28 /* RecipeInstructionViewModel.swift in Sources */,
 				6D243EC72B736D5E00F64C28 /* SimilarRecipesWorker.swift in Sources */,
 				6D7344262B6247A700470882 /* SceneDelegate.swift in Sources */,
@@ -1023,13 +1027,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		6D6016C02B79E96B0028F32F /* recipify.xcdatamodeld */ = {
+		6D08104B2B95C0ED008125A9 /* recipesModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6D6016C12B79E96B0028F32F /* recipify.xcdatamodel */,
+				6D08104C2B95C0ED008125A9 /* recipesModel.xcdatamodel */,
 			);
-			currentVersion = 6D6016C12B79E96B0028F32F /* recipify.xcdatamodel */;
-			path = recipify.xcdatamodeld;
+			currentVersion = 6D08104C2B95C0ED008125A9 /* recipesModel.xcdatamodel */;
+			path = recipesModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

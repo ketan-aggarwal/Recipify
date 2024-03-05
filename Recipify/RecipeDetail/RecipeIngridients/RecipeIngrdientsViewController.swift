@@ -100,7 +100,7 @@ class RecipeIngrdientsViewController: UIViewController ,UITableViewDelegate, UIT
                 
                 let ingridient = ingridientList[indexPath.row]
                 
-                
+                let unit = ingridient.unit
                 if let name = ingridient.name{
                     print(name)
                     cell.title.text = name
@@ -108,8 +108,8 @@ class RecipeIngrdientsViewController: UIViewController ,UITableViewDelegate, UIT
                 }else{
                     cell.title.text = "hello"
                 }
-                if let amount = ingridient.amount {
-                    cell.amount.text = "\(amount)"
+                if let amount = ingridient.amount, let unit = ingridient.unit {
+                    cell.amount.text = "\(amount) \(unit)"
                 } else {
                     cell.amount.text = "N/A"
                 }

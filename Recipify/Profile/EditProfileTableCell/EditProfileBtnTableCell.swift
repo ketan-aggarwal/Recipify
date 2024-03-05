@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol EditProfileBtnTableCellDelegate: AnyObject {
+    func saveButtonTapped()
+}
+
 class EditProfileBtnTableCell: UITableViewCell {
 
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
+    
+    weak var delegate: EditProfileBtnTableCellDelegate?
     
  
     override func awakeFromNib() {
@@ -20,7 +26,8 @@ class EditProfileBtnTableCell: UITableViewCell {
     }
 
     @IBAction func saveBtnTapped(_ sender: Any) {
-       
+        delegate?.saveButtonTapped()
+    
     }
     
     @IBAction func cancelBtnTapped(_ sender: Any) {

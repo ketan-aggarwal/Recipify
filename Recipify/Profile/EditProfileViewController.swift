@@ -12,6 +12,8 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var editProfileTable: UITableView!
     
+    weak var delegate: EditProfileViewControllerDelegate?
+    
     var viewModels: [EditProfileViewModel] = []
     
     override func viewDidLoad() {
@@ -46,6 +48,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfileBtnCell", for: indexPath) as! EditProfileBtnTableCell
+            cell.delegate = self
             return cell
         }
     }
@@ -56,5 +59,23 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             return 150
         }
+    }
+}
+
+
+extension EditProfileViewController: EditProfileBtnTableCellDelegate {
+    func saveButtonTapped() {
+        guard let firstNameCell = editProfileTable.cellForRow(at: IndexPath(row: 0, section: 0)) as? EditProfileTableCell,
+              let lastNameCell = editProfileTable.cellForRow(at: IndexPath(row: 1, section: 0)) as? EditProfileTableCell else {
+            return
+        }
+        
+        let firstName = firstNameCell.firstName ?? ""
+        let lastName = lastNameCell.lastName ?? ""
+        let fullName = "\(firstName) \(lastName)"
+        
+        print("The FullName is \(fullName)")
+        delegate?.didUpdateFullName(fullName)
+        dismiss(animated: true)
     }
 }

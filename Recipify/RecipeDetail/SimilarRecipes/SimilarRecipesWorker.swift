@@ -13,7 +13,7 @@ protocol SimilarRecipeWokerLogic {
 
 class SimilarRecipesWorker: SimilarRecipeWokerLogic {
     func fetchSimilarRecipes(recipeID: Int, completion: @escaping ([Recipe]?) -> Void) {
-        let urlString = "https://api.spoonacular.com/recipes/\(recipeID)/similar?number=6&apiKey=fa2ddf68cccb4977a68420d8829eded1"
+        let urlString = "https://api.spoonacular.com/recipes/\(recipeID)/similar?number=6&apiKey=126f25b751f24b71bcf1206d60ce4592"
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
             completion(nil)

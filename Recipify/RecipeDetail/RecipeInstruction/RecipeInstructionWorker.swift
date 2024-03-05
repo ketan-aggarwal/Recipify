@@ -15,7 +15,7 @@ class RecipeInstructionWorker: RecipeInstructioWorkingLogic {
     
     func getRecipeInstruction(ID: Int, completion: @escaping ([[Step]]?) -> Void) {
         let interpString = String(ID)
-        let urlString = "https://api.spoonacular.com/recipes/\(interpString)/analyzedInstructions?apiKey=fa2ddf68cccb4977a68420d8829eded1"
+        let urlString = "https://api.spoonacular.com/recipes/\(interpString)/analyzedInstructions?apiKey=cca46e1551784aef8290868015fd7b83"
         print("Recipes\(urlString)")
         guard let url = URL(string: urlString) else {
             completion(nil)

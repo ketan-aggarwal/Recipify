@@ -32,6 +32,7 @@ class RecipeIngridientInteractor: RecipeIngridientBusinessLogic, RecipeIngridien
     func getRecipeIngridients() {
         worker?.getRecipeIngridients(ID: itemID) { [weak self] ingridients in
             self?.recipeIngirdients = ingridients ??  []
+            print("march\(self!.recipeIngirdients[0])")
             self?.presenter?.presentFetchedIngridients(recipeIngirdients: self?.recipeIngirdients ?? [])
         }
        

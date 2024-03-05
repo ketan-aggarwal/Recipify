@@ -27,7 +27,7 @@ class RecipeIngridientPresenter: RecipeIngridientPresenterLogic {
         }
         
         let ingredientList: [RecipeIngridients] = recipeIngirdients.map { ingredient in
-            return RecipeIngridients(amount: ingredient.amount, name: ingredient.name)
+            return RecipeIngridients(amount: ingredient.amount, name: ingredient.name , unit: ingredient.unit)
         }
         
       
