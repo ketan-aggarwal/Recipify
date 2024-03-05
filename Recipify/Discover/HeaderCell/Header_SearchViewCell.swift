@@ -15,7 +15,7 @@ class Header_SearchViewCell: UITableViewCell , UITextFieldDelegate{
     override func awakeFromNib() {
         super.awakeFromNib()
         textFieldSearch.delegate = self
-        textFieldSearch.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textFieldSearch.attributedPlaceholder = NSAttributedString(string: "find recipes by cuisine, category, and ingredients...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 
     }
     

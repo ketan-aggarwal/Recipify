@@ -41,7 +41,7 @@ class DiscoverViewContoller: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
+        recipesTable.sectionHeaderTopPadding = 0
         let nib = UINib(nibName: "Header_SearchViewCell", bundle: nil)
         recipesTable.register(nib, forCellReuseIdentifier: "headerCell")
         
@@ -168,7 +168,7 @@ class DiscoverViewContoller: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 120
+            return 54
         case 1:
             return 85
         default:
@@ -177,7 +177,7 @@ class DiscoverViewContoller: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0.01 : 24
+        return section == 0 ? 0.01 : 34
     }
     
    
